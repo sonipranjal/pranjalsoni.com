@@ -10,11 +10,14 @@ export default function NewsletterForm() {
   const [last_name, setLast_name] = useState('');
 
   const Subscribe = async () => {
-    const res = await axios.post('http://localhost:3000/api/subscribe', {
-      email,
-      first_name,
-      last_name,
-    });
+    const res = await axios.post(
+      `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/subscribe`,
+      {
+        email,
+        first_name,
+        last_name,
+      }
+    );
     return res.data;
   };
 

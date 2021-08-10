@@ -10,11 +10,14 @@ export default function ContactPage() {
   const [isDisabled, setIsDisabled] = useState(false);
 
   const sendMessage = async () => {
-    const res = await axios.post('http://localhost:3000/api/contact', {
-      email,
-      name,
-      message,
-    });
+    const res = await axios.post(
+      `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/contact`,
+      {
+        email,
+        name,
+        message,
+      }
+    );
     return res.data;
   };
 
