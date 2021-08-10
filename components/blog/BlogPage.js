@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function BlogPage() {
   return (
@@ -13,7 +13,7 @@ export default function BlogPage() {
           </h2>
         </div>
         <div className="col-start-1 row-start-2 px-4 sm:pb-16">
-          <div className="flex items-center text-sm font-medium my-5 sm:mt-2 sm:mb-4">
+          <div className="flex items-center my-5 text-sm font-medium sm:mt-2 sm:mb-4">
             <svg
               width="20"
               height="20"
@@ -26,48 +26,48 @@ export default function BlogPage() {
               <span className="text-black">4.94</span>
               <span className="sm:hidden md:inline">(128)</span>
             </div>
-            <div className="text-base font-normal mx-2">·</div>
+            <div className="mx-2 text-base font-normal">·</div>
             <div>Collingwood, Ontario</div>
           </div>
-          <hr className="w-16 border-gray-300 hidden sm:block" />
+          <hr className="hidden w-16 border-gray-300 sm:block" />
         </div>
-        <div className="col-start-1 row-start-3 space-y-3 px-4">
-          <p className="flex items-center text-black text-sm font-medium">
+        <div className="col-start-1 row-start-3 px-4 space-y-3">
+          <p className="flex items-center text-sm font-medium text-black">
             <Image
               src="/kevin-francis.jpg"
               alt=""
-              className="w-6 h-6 rounded-full mr-2 bg-gray-100"
+              className="w-6 h-6 mr-2 bg-gray-100 rounded-full"
             />
             Hosted by Kevin Francis
           </p>
           <button
             type="button"
-            className="bg-violet-100 text-violet-700 text-base font-semibold px-6 py-2 rounded-lg"
+            className="px-6 py-2 text-base font-semibold rounded-lg bg-violet-100 text-violet-700"
           >
             Check availability
           </button>
         </div>
-        <div className="col-start-1 row-start-1 flex sm:col-start-2 sm:row-span-3">
-          <div className="w-full grid grid-cols-3 grid-rows-2 gap-2">
+        <div className="flex col-start-1 row-start-1 sm:col-start-2 sm:row-span-3">
+          <div className="grid w-full grid-cols-3 grid-rows-2 gap-2">
             <div className="relative col-span-3 row-span-2 md:col-span-2">
               <Image
                 src="/beach-house.jpg"
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover bg-gray-100 sm:rounded-lg"
+                className="absolute inset-0 object-cover w-full h-full bg-gray-100 sm:rounded-lg"
               />
             </div>
             <div className="relative hidden md:block">
               <Image
                 src="/beach-house-interior.jpg"
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100"
+                className="absolute inset-0 object-cover w-full h-full bg-gray-100 rounded-lg"
               />
             </div>
             <div className="relative hidden md:block">
               <Image
                 src="/beach-house-view.jpg"
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100"
+                className="absolute inset-0 object-cover w-full h-full bg-gray-100 rounded-lg"
               />
             </div>
           </div>

@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { AiOutlineArrowDown } from "react-icons/ai";
-import myPhoto from "../../public/images/myphoto.jpg";
-import { useRouter } from "next/router";
+import Image from 'next/image';
+import { AiOutlineArrowDown } from 'react-icons/ai';
+import myPhoto from '../../public/images/myphoto.jpg';
+import { useRouter } from 'next/router';
 
 export default function HeroSection() {
   const router = useRouter();
@@ -48,7 +48,7 @@ export default function HeroSection() {
               <div className="flex justify-center md:justify-start">
                 <button
                   className="px-6 py-3 mt-4 text-xl font-medium text-white transition duration-300 ease-in-out transform bg-red-500 rounded-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-600 ring-offset-2 focus:bg-red-600"
-                  onClick={() => router.push("/contact")}
+                  onClick={() => router.push('/contact')}
                 >
                   Contact Me!
                 </button>

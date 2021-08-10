@@ -1,11 +1,44 @@
-import Layout from "@/components/Layout";
-import { useForm, ValidationError } from "@formspree/react";
+import Layout from '@/components/Layout';
+import toast, { Toaster } from 'react-hot-toast';
+import { useState } from 'react';
+import axios from 'axios';
 
 export default function ContactPage() {
-  const [state, handleSubmit] = useForm("xknkqenr");
-  if (state.succeeded) {
-    return <p>Thanks for Contacting! I will get in touch shortly!</p>;
-  }
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  const sendMessage = async () => {
+    const res = await axios.post('http://localhost:3000/api/contact', {
+      email,
+      name,
+      message,
+    });
+    return res.data;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsDisabled(true);
+    setEmail('');
+    setMessage('');
+    setName('');
+    toast.promise(
+      sendMessage(),
+      {
+        loading: 'Sending your message...',
+        success: () =>
+          `Thanks you so much ${name && name}, I will get in touch soon!`,
+        error: () => `Something went wrong`,
+      },
+      {
+        style: {
+          minWidth: '380px',
+        },
+      }
+    );
+  };
   return (
     <div>
       <Layout>
@@ -15,10 +48,11 @@ export default function ContactPage() {
               <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-col w-full mb-12 text-center">
                   <h1 className="mb-4 text-2xl font-medium text-gray-900 sm:text-3xl title-font">
-                    Contact Me
+                    Coffee with me.
                   </h1>
                   <p className="mx-auto text-base leading-relaxed lg:w-2/3">
-                    You can send me hello!
+                    I am always excited to work on some awesome projects,
+                    message me and let&apos;s discuss over coffee.
                   </p>
                 </div>
                 <form onSubmit={handleSubmit}>
@@ -37,6 +71,8 @@ export default function ContactPage() {
                             id="name"
                             name="name"
                             required={true}
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                             className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200"
                           />
                         </div>
@@ -54,6 +90,8 @@ export default function ContactPage() {
                             id="email"
                             name="email"
                             required={true}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200"
                           />
                         </div>
@@ -70,30 +108,28 @@ export default function ContactPage() {
                             id="message"
                             name="message"
                             required={true}
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
                             className="w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none resize-none focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200"
                           ></textarea>
                         </div>
                       </div>
                       <div className="w-full p-2">
                         <button
-                          className="flex px-8 py-2 mx-auto text-lg text-white transition duration-300 ease-in-out transform bg-red-500 border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 hover:bg-red-600 text-medium hover:scale-110"
+                          className="flex px-8 py-2 mx-auto text-lg text-white transition duration-300 ease-in-out transform bg-red-500 border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 hover:bg-red-600 text-medium disabled:bg-red-700"
                           type="submit"
-                          disabled={state.submitting}
+                          disabled={isDisabled}
                         >
                           Send!
                         </button>
                       </div>
-                      <ValidationError
-                        prefix="Message"
-                        field="message"
-                        errors={state.errors}
-                      />
                     </div>
                   </div>
                 </form>
               </div>
             </section>
           </div>
+          <Toaster />
         </div>
       </Layout>
     </div>
