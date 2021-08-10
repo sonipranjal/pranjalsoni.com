@@ -20,7 +20,7 @@ const cors = initMiddleware(
 
 export default async function handler(req, res) {
   // Run cors
-  await cors(req, res);
+  // await cors(req, res);
 
   // Rest of the API logic
   try {
@@ -29,6 +29,9 @@ export default async function handler(req, res) {
     const response = await axios({
       method: 'post',
       data: { email, first_name, last_name },
+      headers: {
+        'Access-Control-Allow-Origin': 'https://pranjalsoni.com',
+      },
     });
 
     const status = await response.status;
