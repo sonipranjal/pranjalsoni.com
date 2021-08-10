@@ -15,6 +15,7 @@ const cors = initMiddleware(
   Cors({
     // Only allow requests with GET, POST and OPTIONS
     methods: ['POST', 'OPTIONS'],
+    preflightContinue: true,
   })
 );
 
