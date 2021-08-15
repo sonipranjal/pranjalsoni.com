@@ -1,11 +1,8 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import Footer from './Footer';
 import Navbar from './Navbar';
-import HeroSection from './home/HeroSection';
 
 const Layout = ({ title, keywords, description, children }) => {
-  const router = useRouter();
   return (
     <>
       <Head>
@@ -27,6 +24,6 @@ export default Layout;
 
 Layout.defaultProps = {
   title: 'Pranjal Portfolio',
-  description: 'I am software engineer and a part time freelancer',
+  description: 'I am self taught software developer and a part time freelancer',
   keywords: 'web developer, programmer, react, mern',
 };

@@ -1,6 +1,6 @@
 import ProjectCard from './ProjectCard';
 
-export default function FeaturedProjects() {
+export default function FeaturedProjects({ projects }) {
   return (
     <div className=" bg-gradient-to-b from-red-200 via-red-100 to-white">
       <div>
@@ -9,10 +9,9 @@ export default function FeaturedProjects() {
             projects
           </h1>
           <div>
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
+            {projects.map((project) => (
+              <ProjectCard key={project.filePath} project={project} />
+            ))}
           </div>
         </div>
       </div>

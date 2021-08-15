@@ -20,10 +20,12 @@ export default function Footer() {
           <div>
             No <FaRegCopyright className="inline-block" /> copyright issues.
           </div>
+
           <p className="text-center">
             Feel free to copy. If you need any help, ping me !
           </p>
         </div>
+
         <div className="flex flex-col items-center w-full pb-3 my-4 text-gray-700 border-b-2 md:pb-0 md:my-0 md:border-0">
           <div>Pranjal Soni</div>
           <p>

@@ -45,13 +45,11 @@ const SingleBlogPage = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col w-full h-full p-2 mx-10 mt-10 bg-white select-none sm:p-4 rounded-2xl sm:flex-row">
+          <div className="flex flex-col w-full h-full p-2 mx-10 mt-10 bg-white sm:p-4 rounded-2xl sm:flex-row">
             <div className="flex flex-col items-center flex-1 sm:p-2">
-              <div className="container flex flex-col flex-1 p-4">
-                <h1 className="w-full h-full mb-5 font-mono text-2xl font-bold text-center sm:text-3xl md:text-4xl rounded-2xl">
-                  {post.title}
-                </h1>
-                <div className="w-full h-full pt-4 text-xl text-left text-gray-700 p-x4 rounded-2xl">
+              <div className="container flex flex-col items-center flex-1 p-4 prose lg:prose-xl">
+                <h2 className="mb-5 rounded-2xl">{post.title}</h2>
+                <div className="pt-4 rounded-2xl">
                   {htmlToReactParser.parse(post.html)}
                 </div>
               </div>
