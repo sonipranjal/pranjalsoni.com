@@ -1,10 +1,10 @@
-import "../styles/globals.css";
-import "nprogress/nprogress.css";
-import dynamic from "next/dynamic";
+import '../styles/globals.css';
+import '../public/nprogress.css';
+import dynamic from 'next/dynamic';
 
 const TopProgressBar = dynamic(
   () => {
-    return import("components/TopProgressBar");
+    return import('components/TopProgressBar');
   },
   { ssr: false }
 );

@@ -19,11 +19,11 @@ export default function ProjectCard({ project }) {
             <div className="flex flex-col items-center w-full bg-transparent border-2 border-gray-500 shadow-xl p-7 sm:p-10 md:px-24 lg:p-10 rounded-2xl">
               <div className="w-full h-full">
                 <div className="pb-5">
-                  <h1 className="text-2xl font-bold tracking-wide sm:text-3xl md:text-4xl">
+                  <h1 className="text-2xl font-bold tracking-wide capitalize sm:text-3xl md:text-4xl">
                     {title}
                   </h1>
                 </div>
-                <div className="h-full mb-3 space-x-3">
+                <div className="h-full mb-3 space-x-2">
                   {tagsArray.map((tag, i) => (
                     <span
                       key={i}
@@ -37,9 +37,9 @@ export default function ProjectCard({ project }) {
                   <p className="text-gray-800 sm:text-lg">{description}</p>
                 </div>
                 <div className="flex flex-row space-x-3">
-                  <div>
+                  <div className="flex-1 sm:flex-none">
                     <button
-                      className="z-10 px-3 py-2 mt-4 text-xl font-medium text-white transition duration-300 ease-in-out bg-red-500 shadow-md lg:px-6 lg:py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-600 ring-offset-2 focus:bg-red-600 hover:text-red-600 hover:bg-white focus:text-white hover:ring-2 hover:ring-red-600"
+                      className="z-10 w-full px-3 py-2 mt-4 text-xl font-medium text-white transition duration-300 ease-in-out bg-red-500 shadow-md lg:px-6 lg:py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-600 ring-offset-2 focus:bg-red-600 hover:text-red-600 hover:bg-white focus:text-white hover:ring-2 hover:ring-red-600"
                       onClick={() =>
                         router.push(
                           `/projects/${filePath.replace(/\.mdx?$/, '')}`
@@ -49,7 +49,7 @@ export default function ProjectCard({ project }) {
                       Details
                     </button>
                   </div>
-                  <div>
+                  <div className="hidden sm:block">
                     <button
                       className="px-3 py-2 mt-4 text-xl font-medium text-white transition duration-300 ease-in-out bg-red-500 shadow-md lg:px-6 lg:py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-600 ring-offset-2 focus:bg-red-600 hover:ring-2 hover:ring-red-600 hover:text-red-600 hover:bg-white focus:text-white"
                       onClick={() => window.open(live_url, '_blank')}
@@ -65,6 +65,14 @@ export default function ProjectCard({ project }) {
                       <FaGithub />
                     </button>
                   </div>
+                </div>
+                <div className="flex items-center justify-center sm:hidden">
+                  <button
+                    className="w-full px-3 py-2 mt-4 text-xl font-medium text-white transition duration-300 ease-in-out bg-red-500 shadow-md lg:px-6 lg:py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-600 ring-offset-2 focus:bg-red-600 hover:ring-2 hover:ring-red-600 hover:text-red-600 hover:bg-white focus:text-white"
+                    onClick={() => window.open(live_url, '_blank')}
+                  >
+                    Live Demo
+                  </button>
                 </div>
               </div>
             </div>
