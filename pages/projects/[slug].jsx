@@ -34,7 +34,7 @@ export default function PostPage({ source, frontMatter }) {
           </div>
           <main className="flex flex-col items-center">
             <div className="w-11/12">
-              <MDXRemote {...source} components={components} />
+              <MDXRemote {...source} />
             </div>
           </main>
         </div>
