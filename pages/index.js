@@ -28,7 +28,6 @@ export function getStaticProps() {
   const projects = projectFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(PROJECTS_PATH, filePath));
     const { content, data } = matter(source);
-    console.log(data);
 
     return {
       content,

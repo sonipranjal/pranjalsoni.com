@@ -6,7 +6,6 @@ import { projectFilePaths, PROJECTS_PATH } from '../../utils/mdxUtils';
 import ProjectCard from '@/components/projects/ProjectCard';
 
 export default function ProjectPage({ projects }) {
-  console.log(projects);
   return (
     <Layout>
       <div className="flex flex-col items-center justify-center bg-gradient-to-b from-white via-red-100 to-white">
@@ -29,7 +28,6 @@ export function getStaticProps() {
   const projects = projectFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(PROJECTS_PATH, filePath));
     const { content, data } = matter(source);
-    console.log(data);
 
     return {
       content,
