@@ -6,8 +6,9 @@ import {
   FaLinkedin,
   FaRegCopyright,
 } from 'react-icons/fa';
-import FooterImage from '../public/images/footerImage.jpeg';
 import { useRouter } from 'next/router';
+import LatestTweets from './footer/LatestTweets';
+import FooterImage from 'public/images/footerImage.jpeg';
 import Image from 'next/image';
 
 export default function Footer() {
@@ -62,7 +63,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <Image src={FooterImage} alt="footer" />
+      {router.pathname === '/' ? (
+        <div className="my-4">
+          <LatestTweets />
+        </div>
+      ) : (
+        <Image src={FooterImage} alt="India" />
+      )}
     </div>
   );
 }
