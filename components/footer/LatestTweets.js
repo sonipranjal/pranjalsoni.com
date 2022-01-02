@@ -12,8 +12,7 @@ const randomClasses = [
   'lg:rotate-6  ',
 ];
 
-const url =
-  process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000' + '/api/tweets';
+const url = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
 const LatestTweets = () => {
   const [tweets, setTweets] = useState([]);
@@ -28,7 +27,7 @@ const LatestTweets = () => {
 
   useEffect(() => {
     (async function () {
-      const fetchedTweets = await axios.get(url);
+      const fetchedTweets = await axios.get(`${url}/api/tweets`);
       const data = fetchedTweets.data;
       setTweets(data.data);
       setUser(data.includes.users[0]);
@@ -43,7 +42,9 @@ const LatestTweets = () => {
       setLoading(false);
       return toast.success('No more tweets');
     }
-    const newTweets = await axios.get(`${url}?pagination_token=${nextToken}`);
+    const newTweets = await axios.get(
+      `${url}/api/tweets?pagination_token=${nextToken}`
+    );
     setLoading(false);
     setTweets((preTweets) => [...preTweets, ...newTweets.data.data]);
     setNextToken(newTweets.data.meta.next_token);
