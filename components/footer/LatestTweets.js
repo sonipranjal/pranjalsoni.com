@@ -13,7 +13,7 @@ const randomClasses = [
 ];
 
 const url =
-  process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000/api/tweets';
+  process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000' + '/api/tweets';
 
 const LatestTweets = () => {
   const [tweets, setTweets] = useState([]);
