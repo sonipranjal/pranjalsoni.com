@@ -20,19 +20,19 @@ export default function RecentPosts() {
     setLoading(false);
   };
   return (
-    <div className="flex items-center justify-center w-full h-full p-10 mt-10 bg-gradient-to-b from-white via-red-100 to-red-200">
+    <div className="flex items-center justify-center bg-gradient-to-b from-white via-red-100 to-red-200">
       <div className="container flex flex-col justify-center">
         <h1 className="text-5xl font-medium text-center text-gray-800">
           recent posts
         </h1>
         {loading ? (
-          <div className="flex flex-col items-center justify-center mt-5 space-y-5 lg:space-y-0 lg:flex-row">
+          <div className="flex flex-col items-center justify-center my-5 lg:space-y-0 lg:flex-row">
             {[...Array(3)].map((id, idx) => (
               <AnimatePulse key={idx} />
             ))}
           </div>
         ) : (
-          <div className="grid h-full grid-cols-1 lg:grid-cols-3 place-content-center place-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 place-content-center place-items-center">
             {posts.map(({ id, title, excerpt, published_at, slug }) => (
               <BlogCard
                 key={id}
