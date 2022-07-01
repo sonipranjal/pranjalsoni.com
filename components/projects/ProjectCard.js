@@ -23,8 +23,8 @@ export default function ProjectCard({ project }) {
                     {title}
                   </h1>
                 </div>
-                <div className="h-full mb-3 space-x-2">
-                  {tagsArray.map((tag, i) => (
+                <div className="h-full w-full max-w-[90%] overflow-x-auto overflow-y-hidden py-4 mb-3 space-x-2">
+                  {tagsArray.slice(0, 3).map((tag, i) => (
                     <span
                       key={i}
                       className="p-2 text-sm text-white bg-gray-900 rounded-lg sm:text-base lg:rounded-xl"
