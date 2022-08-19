@@ -13,11 +13,16 @@ export default function RecentPosts() {
   }, []);
 
   const fetchPosts = async () => {
-    const res = await axios.get(
-      `https://pranjalsoni.herokuapp.com/ghost/api/v3/content/posts/?key=${process.env.NEXT_PUBLIC_GHOST_API_URL}`
-    );
-    setPosts(res.data.posts.slice(0, 3));
-    setLoading(false);
+    try {
+      const res = await axios.get(
+        `https://pranjalsoni.herokuapp.com/ghost/api/v3/content/posts/?key=${process.env.NEXT_PUBLIC_GHOST_API_URL}`
+      );
+      setPosts(res.data.posts.slice(0, 3));
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <div className="flex items-center justify-center bg-gradient-to-b from-white via-red-100 to-red-200">

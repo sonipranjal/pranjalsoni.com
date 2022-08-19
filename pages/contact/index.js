@@ -11,7 +11,7 @@ export default function ContactPage() {
 
   const sendMessage = async () => {
     const res = await axios.post(
-      `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/contact`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/contact`,
       {
         email,
         name,
