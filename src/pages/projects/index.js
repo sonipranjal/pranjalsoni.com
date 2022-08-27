@@ -1,9 +1,9 @@
-import Layout from '@/components/Layout';
+import Layout from 'src/components/Layout';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 import { projectFilePaths, PROJECTS_PATH } from '../../utils/mdxUtils';
-import ProjectCard from '@/components/projects/ProjectCard';
+import ProjectCard from 'src/components/projects/ProjectCard';
 
 export default function ProjectPage({ projects }) {
   return (

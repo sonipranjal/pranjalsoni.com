@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Author';
+  font-weight: 100;
+  src: url('../../public/fonts/Author-Light.woff2');
+}
+
+@font-face {
+  font-family: 'Author';
+  font-weight: 400;
+  src: url('../../public/fonts/Author-Regular.woff2');
+}
+
+@font-face {
+  font-family: 'Author';
+  font-weight: 700;
+  src: url('../../public/fonts/Author-Bold.woff2');
+}
+
+@font-face {
+  font-family: 'Panchang';
+  src: url('../../public/fonts/Panchang-Regular.woff2');
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}

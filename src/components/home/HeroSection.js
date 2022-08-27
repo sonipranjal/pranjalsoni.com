@@ -1,34 +1,31 @@
 import Image from 'next/image';
 import { AiOutlineArrowDown } from 'react-icons/ai';
-import myPhoto from '../../public/images/myphoto.jpg';
+import myPhoto from '../../../public/images/profile.jpeg';
 import { useRouter } from 'next/router';
 
 export default function HeroSection() {
   const router = useRouter();
 
   return (
-    <div className="flex justify-center mt-6 md:mt-12">
+    <div className="flex justify-center p-4 mt-6 md:mt-12">
       <div className="container md:my-3">
-        <div className="grid md:grid-cols-2">
-          <div className="flex justify-center md:hidden">
-            <div className="flex justify-center">
-              <div className="rounded-full shadow-2xl">
-                <Image
-                  className="rounded-full"
-                  placeholder="blur"
-                  src={myPhoto}
-                  width={200}
-                  height={200}
-                  alt="Pranjal"
-                />
-              </div>
+        <div className="md:grid md:grid-cols-3">
+          <div className="flex items-center justify-center w-full h-full md:hidden">
+            <div className="relative bg-black shadow-2xl w-60 h-60 ring ring-red-500 ring-offset-4 rounded-3xl">
+              <Image
+                className="rounded-3xl"
+                placeholder="blur"
+                src={myPhoto}
+                layout="fill"
+                alt="Pranjal"
+              />
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center mt-10 md:mt-0 md:items-start">
-            <div className="w-10/12">
+          <div className="flex flex-col items-center justify-center col-span-2 mt-10 md:mt-0 md:items-start">
+            <div className="w-full">
               <h1 className="w-full text-3xl font-semibold tracking-wide text-center text-gray-900 md:text-4xl lg:text-5xl md:text-left">
                 Hi
-                <span className="pr-2">
+                <span className="mx-2">
                   <Image
                     alt="hi emoji"
                     src="/images/hii.png"
@@ -36,14 +33,17 @@ export default function HeroSection() {
                     height={50}
                   />
                 </span>
-                <br /> I am Pranjal, <br />
-                <span className="text-red-500">Web Developer</span>
+                I am Pranjal, <br />
               </h1>
-              <p className="mt-4 text-lg text-center text-gray-700 md:text-left">
-                I am a full stack developer with proficiency in React, Redux,
-                Node, MongoDB, C++, and React Native. I am passionate about
+              <h1 className="w-full my-2 text-sm font-bold text-center text-red-500 sm:text-lg md:text-2xl lg:text-3xl md:text-left">
+                Full Stack JavaScript Developer | Founder | Teacher
+              </h1>
+              <p className="max-w-3xl mt-4 text-lg text-center text-gray-700 md:text-left">
+                I am a full stack developer with proficiency in NextJs, React,
+                React-Native, Node, and all things JS. I am passionate about
                 writing clean, efficient and professional code. I have a good
                 understanding of Data Structures, Algorithms and UI Design.
+                Always curious about new tech.
               </p>
               <div className="flex justify-center md:justify-start">
                 <button
@@ -55,15 +55,14 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-          <div className="justify-end hidden my-auto md:flex">
-            <div className="flex justify-center">
-              <div className="rounded-full shadow-lg">
+          <div className="justify-end hidden w-full h-full mx-4 my-auto bg-transparent md:flex">
+            <div className="flex justify-center w-full h-full bg-transparent">
+              <div className="relative bg-transparent shadow-2xl ring ring-red-500 ring-offset-4 rounded-3xl w-96 h-96">
                 <Image
-                  className="rounded-full"
+                  className="object-cover rounded-3xl"
                   placeholder="blur"
                   src={myPhoto}
-                  width={350}
-                  height={350}
+                  layout="fill"
                   alt="Pranjal"
                 />
               </div>

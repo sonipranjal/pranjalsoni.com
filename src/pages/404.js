@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import Layout from '@/components/Layout';
+import Layout from 'src/components/Layout';
 import { FaArrowLeft } from 'react-icons/fa';
 export default function NotFound() {
   const router = useRouter();

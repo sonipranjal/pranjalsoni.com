@@ -1,6 +1,6 @@
-import RecentPosts from '@/components/blog/RecentPosts';
-import Layout from '@/components/Layout';
-import NewsletterForm from '@/components/NewsletterForm';
+import RecentPosts from 'src/components/blog/RecentPosts';
+import Layout from 'src/components/Layout';
+import NewsletterForm from 'src/components/NewsletterForm';
 import axios from 'axios';
 import HtmlToReactParser from 'html-to-react';
 
@@ -57,7 +57,6 @@ const SingleBlogPage = () => {
           </div>
         )}
       </div>
-      <RecentPosts />
       <NewsletterForm />
     </Layout>
   );

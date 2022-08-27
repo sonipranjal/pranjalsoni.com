@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
-import Layout from '@/components/Layout';
+import Layout from 'src/components/Layout';
 import { projectFilePaths, PROJECTS_PATH } from '../../utils/mdxUtils';
 
 // Custom components/renderers to pass to MDX.

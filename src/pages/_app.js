@@ -1,12 +1,12 @@
 import '../styles/globals.css';
-import '../public/nprogress.css';
+import '../../public/nprogress.css';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
 const TopProgressBar = dynamic(
   () => {
-    return import('components/TopProgressBar');
+    return import('src/components/TopProgressBar');
   },
   { ssr: false }
 );

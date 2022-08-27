@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 // PROJECTS_PATH is useful when you want to get the path to a specific file
-export const PROJECTS_PATH = path.join(process.cwd(), 'content/projects');
+export const PROJECTS_PATH = path.join(process.cwd(), 'src/content/projects');
 
 // projectFilePaths is the list of all mdx files inside the PROJECTS_PATH directory
 export const projectFilePaths = fs

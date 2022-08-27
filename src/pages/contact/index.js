@@ -1,4 +1,4 @@
-import Layout from '@/components/Layout';
+import Layout from 'src/components/Layout';
 import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
 import axios from 'axios';

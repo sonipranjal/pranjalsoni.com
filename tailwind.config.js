@@ -1,12 +1,19 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   mode: 'jit',
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Author', ...defaultTheme.fontFamily.sans],
+        cool: ['Panchang', 'Author', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   variants: {
     extend: {},

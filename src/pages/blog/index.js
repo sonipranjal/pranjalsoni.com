@@ -1,8 +1,8 @@
-import BlogCard from '@/components/blog//BlogCard';
+import BlogCard from 'src/components/blog/BlogCard';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import AnimatePulse from '@/components/blog/AnimatePulse';
-import Layout from '@/components/Layout';
+import AnimatePulse from 'src/components/blog/AnimatePulse';
+import Layout from 'src/components/Layout';
 
 export default function BlogPage() {
   const [posts, setPosts] = useState([]);

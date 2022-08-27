@@ -1,9 +1,8 @@
-import RecentPosts from '@/components/blog/RecentPosts';
-import HeroSection from '@/components/home/HeroSection';
-import Layout from '@/components/Layout';
-import NewsletterForm from '@/components/NewsletterForm';
-import FeaturedProjects from '@/components/projects/FeaturedProjects';
-import SkillsSlider from '@/components/skills/SkillsSlider';
+import HeroSection from 'src/components/home/HeroSection';
+import Layout from 'src/components/Layout';
+import NewsletterForm from 'src/components/NewsletterForm';
+import FeaturedProjects from 'src/components/projects/FeaturedProjects';
+import SkillsSlider from 'src/components/skills/SkillsSlider';
 
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -16,7 +15,6 @@ export default function Home({ projects }) {
       <Layout>
         <HeroSection />
         <SkillsSlider />
-        <RecentPosts />
         <FeaturedProjects projects={projects} />
         <NewsletterForm />
       </Layout>
